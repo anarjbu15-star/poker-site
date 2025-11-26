@@ -2,6 +2,14 @@ let ws;
 let username = "";
 let timerInterval;
 
+// FIX — convert "10H" → "0H" for deckofcardsapi
+function fixCardCode(card) {
+  if (card.startsWith("10")) {
+    return "0" + card.slice(2);
+  }
+  return card;
+}
+
 function login() {
   username = document.getElementById("username").value.trim();
   if (!username) return alert("Enter a name!");
@@ -36,8 +44,11 @@ function updateCommunityCards(cards) {
   area.innerHTML = "";
 
   cards.forEach(card => {
+    let fixed = fixCardCode(card); // FIX APPLIED HERE
     let img = document.createElement("img");
-    img.src = `https://deckofcardsapi.com/static/img/${card}.png`;
+    img.src = `https://deckofcardsapi.com/static/img/${fixed}.png`;
+    img.style.width = "80px";
+    img.style.margin = "5px";
     area.appendChild(img);
   });
 }
