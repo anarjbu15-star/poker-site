@@ -1,13 +1,12 @@
 body {
-  margin: 0;
-  font-family: Arial;
-  background: #0b3d0b;
+  background: #023000;
   color: white;
+  font-family: Arial, sans-serif;
   text-align: center;
 }
 
 .screen {
-  padding-top: 50px;
+  margin-top: 50px;
 }
 
 .hidden {
@@ -17,72 +16,70 @@ body {
 #table {
   position: relative;
   width: 900px;
-  margin: 0 auto;
-  margin-top: 20px;
+  height: 600px;
+  margin: auto;
 }
 
 #table-img {
   width: 100%;
+  height: 100%;
   border-radius: 20px;
 }
 
-.seat {
+/* community cards (center) */
+.community-row {
   position: absolute;
-  width: 120px;
-  height: 60px;
-}
-
-.seat .player {
-  background: rgba(0,0,0,0.5);
-  border: 1px solid #fff;
-  border-radius: 10px;
-  padding: 5px;
-}
-
-/* seat positions (circle around table) */
-.seat1 { top: 10%; left: 40%; }
-.seat2 { top: 30%; left: 10%; }
-.seat3 { top: 70%; left: 10%; }
-.seat4 { top: 85%; left: 40%; }
-.seat5 { top: 70%; left: 70%; }
-.seat6 { top: 30%; left: 70%; }
-
-#community-cards {
-  margin-top: -200px;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   display: flex;
-  justify-content: center;
-  gap: 10px;
 }
 
-#community-cards img {
-  width: 70px;
-  border-radius: 5px;
+/* player cards (lower center) */
+.player-row {
+  position: absolute;
+  bottom: 120px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
 }
 
+/* uniform card style */
+.card-img {
+  width: 90px;
+  height: auto;
+  margin: 4px;
+  border-radius: 6px;
+}
+
+/* action buttons */
 #actions {
-  margin-top: 20px;
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 #actions button {
   padding: 10px 20px;
-  margin: 5px;
-  background: #006400;
-  color: white;
+  margin: 3px;
+  background: #0b5;
   border: none;
   border-radius: 6px;
+  color: white;
   cursor: pointer;
 }
 
 #actions button:hover {
-  background: #00aa00;
+  background: #0d7;
 }
 
+/* timer */
 #timer {
-  font-size: 30px;
-  margin-top: 20px;
-}
-.card-img {
-  width: 80px;
-  margin: 5px;
-  border-radius: 5px;
+  position: absolute;
+  bottom: 180px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 28px;
+  font-weight: bold;
 }
