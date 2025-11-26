@@ -1,23 +1,17 @@
 body {
   background: #023000;
   color: white;
-  font-family: Arial, sans-serif;
   text-align: center;
+  font-family: Arial;
 }
 
-.screen {
-  margin-top: 50px;
-}
-
-.hidden {
-  display: none;
-}
+.hidden { display: none; }
 
 #table {
-  position: relative;
   width: 900px;
   height: 600px;
   margin: auto;
+  position: relative;
 }
 
 #table-img {
@@ -26,7 +20,6 @@ body {
   border-radius: 20px;
 }
 
-/* community cards (center) */
 .community-row {
   position: absolute;
   top: 45%;
@@ -35,7 +28,6 @@ body {
   display: flex;
 }
 
-/* player cards (lower center) */
 .player-row {
   position: absolute;
   bottom: 120px;
@@ -44,15 +36,12 @@ body {
   display: flex;
 }
 
-/* uniform card style */
 .card-img {
-  width: 90px;
-  height: auto;
+  width: 92px;
   margin: 4px;
   border-radius: 6px;
 }
 
-/* action buttons */
 #actions {
   position: absolute;
   bottom: 40px;
@@ -70,11 +59,8 @@ body {
   cursor: pointer;
 }
 
-#actions button:hover {
-  background: #0d7;
-}
+#actions button:hover { background: #0d7; }
 
-/* timer */
 #timer {
   position: absolute;
   bottom: 180px;
