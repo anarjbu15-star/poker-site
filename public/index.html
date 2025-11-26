@@ -1,10 +1,52 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>HiPoker</title>
+  <title>HiPoker – Table</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
-    <h1>Welcome to HiPoker</h1>
-    <p>Your real-time poker game will load here.</p>
+
+<div id="login-screen" class="screen">
+  <h1>HiPoker</h1>
+  <input id="username" type="text" placeholder="Enter username" />
+  <button onclick="login()">Enter</button>
+</div>
+
+<div id="lobby-screen" class="screen hidden">
+  <h2>Welcome, <span id="player-name"></span></h2>
+  <button onclick="joinTable()">Join Table</button>
+</div>
+
+<div id="table-screen" class="screen hidden">
+
+  <div id="table">
+    <img src="https://i.imgur.com/9Wi1qHz.png" id="table-img">
+
+    <!-- seats -->
+    <div class="seat seat1"><div class="player"></div></div>
+    <div class="seat seat2"><div class="player"></div></div>
+    <div class="seat seat3"><div class="player"></div></div>
+    <div class="seat seat4"><div class="player"></div></div>
+    <div class="seat seat5"><div class="player"></div></div>
+    <div class="seat seat6"><div class="player"></div></div>
+
+    <!-- community cards -->
+    <div id="community-cards"></div>
+
+    <!-- action buttons -->
+    <div id="actions">
+      <button onclick="sendAction('fold')">Fold</button>
+      <button onclick="sendAction('check')">Check</button>
+      <button onclick="sendAction('call')">Call</button>
+      <button onclick="sendAction('bet')">Bet</button>
+    </div>
+
+    <!-- timer -->
+    <div id="timer">7</div>
+  </div>
+</div>
+
+<script src="game.js"></script>
 </body>
 </html>
