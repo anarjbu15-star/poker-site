@@ -81,3 +81,8 @@ body {
   font-size: 30px;
   margin-top: 20px;
 }
+.card-img {
+  width: 80px;
+  margin: 5px;
+  border-radius: 5px;
+}
