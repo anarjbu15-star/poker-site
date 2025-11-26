@@ -15,7 +15,9 @@ function joinTable() {
   document.getElementById("lobby-screen").classList.add("hidden");
   document.getElementById("table-screen").classList.remove("hidden");
 
-  ws = new WebSocket("wss://" + window.location.host);
+  // Render needs wss:// + host
+  const wsURL = (location.protocol === "https:" ? "wss://" : "ws://") + location.host;
+  ws = new WebSocket(wsURL);
 
   ws.onopen = () => {
     ws.send(JSON.stringify({ type: "join", name: username }));
@@ -26,11 +28,19 @@ function joinTable() {
 
     if (data.type === "cards") {
       updateCommunityCards(data.cards);
-      startTimer(7);
+    }
+
+    if (data.type === "hole") {
+      updateHoleCards(data.cards);
+    }
+
+    if (data.type === "timer") {
+      startTimer(data.seconds);
     }
   };
 }
 
+// Show community cards
 function updateCommunityCards(cards) {
   const area = document.getElementById("community-cards");
   area.innerHTML = "";
@@ -38,6 +48,20 @@ function updateCommunityCards(cards) {
   cards.forEach(card => {
     let img = document.createElement("img");
     img.src = `https://deckofcardsapi.com/static/img/${card}.png`;
+    img.className = "card-img";
+    area.appendChild(img);
+  });
+}
+
+// Show player hand (your two cards)
+function updateHoleCards(cards) {
+  const area = document.getElementById("player-cards");
+  area.innerHTML = "";
+
+  cards.forEach(card => {
+    let img = document.createElement("img");
+    img.src = `https://deckofcardsapi.com/static/img/${card}.png`;
+    img.className = "card-img";
     area.appendChild(img);
   });
 }
