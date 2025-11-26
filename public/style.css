@@ -1,0 +1,83 @@
+body {
+  margin: 0;
+  font-family: Arial;
+  background: #0b3d0b;
+  color: white;
+  text-align: center;
+}
+
+.screen {
+  padding-top: 50px;
+}
+
+.hidden {
+  display: none;
+}
+
+#table {
+  position: relative;
+  width: 900px;
+  margin: 0 auto;
+  margin-top: 20px;
+}
+
+#table-img {
+  width: 100%;
+  border-radius: 20px;
+}
+
+.seat {
+  position: absolute;
+  width: 120px;
+  height: 60px;
+}
+
+.seat .player {
+  background: rgba(0,0,0,0.5);
+  border: 1px solid #fff;
+  border-radius: 10px;
+  padding: 5px;
+}
+
+/* seat positions (circle around table) */
+.seat1 { top: 10%; left: 40%; }
+.seat2 { top: 30%; left: 10%; }
+.seat3 { top: 70%; left: 10%; }
+.seat4 { top: 85%; left: 40%; }
+.seat5 { top: 70%; left: 70%; }
+.seat6 { top: 30%; left: 70%; }
+
+#community-cards {
+  margin-top: -200px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+#community-cards img {
+  width: 70px;
+  border-radius: 5px;
+}
+
+#actions {
+  margin-top: 20px;
+}
+
+#actions button {
+  padding: 10px 20px;
+  margin: 5px;
+  background: #006400;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+#actions button:hover {
+  background: #00aa00;
+}
+
+#timer {
+  font-size: 30px;
+  margin-top: 20px;
+}
