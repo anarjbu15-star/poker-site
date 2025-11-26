@@ -7,46 +7,38 @@
 
 <body>
 
+<!-- LOGIN -->
 <div id="login-screen" class="screen">
   <h1>HiPoker</h1>
   <input id="username" type="text" placeholder="Enter username" />
   <button onclick="login()">Enter</button>
 </div>
 
+<!-- LOBBY -->
 <div id="lobby-screen" class="screen hidden">
   <h2>Welcome, <span id="player-name"></span></h2>
   <button onclick="joinTable()">Join Table</button>
 </div>
 
+<!-- TABLE -->
 <div id="table-screen" class="screen hidden">
-
   <div id="table">
-    <img src="https://i.imgur.com/9Wi1qHz.png" id="table-img">
 
-    <!-- seats -->
-    <div class="seat seat1"><div class="player"></div></div>
-    <div class="seat seat2"><div class="player"></div></div>
-    <div class="seat seat3"><div class="player"></div></div>
-    <div class="seat seat4"><div class="player"></div></div>
-    <div class="seat seat5"><div class="player"></div></div>
-    <div class="seat seat6"><div class="player"></div></div>
+    <!-- GOOD WORKING POKER TABLE IMAGE -->
+    <img 
+      src="https://raw.githubusercontent.com/anarbju15-star/poker-assets/main/table.png"
+      id="table-img"
+    >
 
     <!-- community cards -->
-    <div id="community-cards"></div>
+    <div id="community-cards" class="community-row"></div>
+
+    <!-- player hole cards -->
+    <div id="player-cards" class="player-row"></div>
 
     <!-- action buttons -->
     <div id="actions">
       <button onclick="sendAction('fold')">Fold</button>
       <button onclick="sendAction('check')">Check</button>
       <button onclick="sendAction('call')">Call</button>
-      <button onclick="sendAction('bet')">Bet</button>
-    </div>
-
-    <!-- timer -->
-    <div id="timer">7</div>
-  </div>
-</div>
-
-<script src="game.js"></script>
-</body>
-</html>
+      <button o
