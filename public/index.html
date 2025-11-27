@@ -1,34 +1,44 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>HiPoker</title>
+  <meta charset="utf-8" />
+  <title>HiPoker — Texas Hold'em</title>
   <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
 <div id="login-screen" class="screen">
   <h1>HiPoker</h1>
-  <input id="username" type="text" placeholder="Enter username" />
-  <button onclick="login()">Enter</button>
+  <input id="username" placeholder="Nickname" />
+  <button id="enterBtn">Enter</button>
+</div>
+
+<div id="lobby-screen" class="screen hidden">
+  <h2>Welcome, <span id="player-name"></span></h2>
+  <button id="joinBtn">Sit at table</button>
+  <div id="players-list"></div>
 </div>
 
 <div id="table-screen" class="screen hidden">
   <div id="table">
-    <img src="https://raw.githubusercontent.com/anarjbu15-star/poker-assets/main/table.png" id="table-img" />
-
-    <!-- Community cards -->
+    <img id="table-img" src="https://raw.githubusercontent.com/anarjbu15-star/poker-assets/main/table.png" />
+    <div id="seats"></div>
     <div id="community-cards" class="community-row"></div>
-
-    <!-- Player cards (optional future feature) -->
     <div id="player-cards" class="player-row"></div>
 
-    <!-- Action buttons -->
+    <div id="info">
+      <div>Pot: <span id="pot">0</span></div>
+      <div>Stage: <span id="stage">idle</span></div>
+      <div>Dealer: <span id="dealer">-</span></div>
+      <div>Current: <span id="current">-</span></div>
+    </div>
+
     <div id="actions">
-      <button onclick="sendAction('fold')">Fold</button>
-      <button onclick="sendAction('check')">Check</button>
-      <button onclick="sendAction('call')">Call</button>
-      <button onclick="sendAction('bet')">Bet</button>
+      <button onclick="doAction('fold')">Fold</button>
+      <button onclick="doAction('check')">Check</button>
+      <button onclick="doAction('call')">Call</button>
+      <button onclick="doBet()">Bet/Raise</button>
+      <button onclick="doAction('allin')">All-in</button>
     </div>
 
     <div id="timer">7</div>
