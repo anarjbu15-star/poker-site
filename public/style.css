@@ -1,71 +1,15 @@
-body {
-  background: #023000;
-  color: white;
-  text-align: center;
-  font-family: Arial;
-}
-
+body { background: #062; color: #fff; font-family: Arial, sans-serif; text-align: center; }
+.screen { padding-top: 30px; }
 .hidden { display: none; }
-
-#table {
-  width: 900px;
-  height: 600px;
-  margin: auto;
-  position: relative;
-}
-
-#table-img {
-  width: 100%;
-  height: 100%;
-  border-radius: 20px;
-}
-
-.community-row {
-  position: absolute;
-  top: 45%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  display: flex;
-}
-
-.player-row {
-  position: absolute;
-  bottom: 120px;
-  left: 50%;
-  transform: translateX(-50%);
-  display: flex;
-}
-
-.card-img {
-  width: 92px;
-  margin: 4px;
-  border-radius: 6px;
-}
-
-#actions {
-  position: absolute;
-  bottom: 40px;
-  left: 50%;
-  transform: translateX(-50%);
-}
-
-#actions button {
-  padding: 10px 20px;
-  margin: 3px;
-  background: #0b5;
-  border: none;
-  border-radius: 6px;
-  color: white;
-  cursor: pointer;
-}
-
-#actions button:hover { background: #0d7; }
-
-#timer {
-  position: absolute;
-  bottom: 180px;
-  left: 50%;
-  transform: translateX(-50%);
-  font-size: 28px;
-  font-weight: bold;
-}
+#table { width: 920px; height: 620px; margin: 0 auto; position: relative; }
+#table-img { width: 100%; height: 100%; border-radius: 10px; }
+.community-row { position: absolute; top: 220px; left: 50%; transform: translateX(-50%); display:flex; }
+.player-row { position: absolute; bottom: 110px; left: 50%; transform: translateX(-50%); display:flex; }
+.card-img { width: 92px; margin: 6px; border-radius: 6px; }
+#seats { position:absolute; inset: 10px; pointer-events:none; }
+.seat { position:absolute; width: 140px; height: 60px; pointer-events:none; color:#fff; }
+.seat .label { background: rgba(0,0,0,0.4); padding:6px; border-radius:6px; }
+#actions { position:absolute; bottom:12px; left:50%; transform:translateX(-50%); }
+#actions button { padding:10px 14px; margin:6px; border-radius:6px; border:none; background:#0a3; color:#fff; cursor:pointer; }
+#info { position:absolute; top:12px; left:12px; text-align:left; }
+#timer { position:absolute; bottom:80px; left:50%; transform:translateX(-50%); font-size:26px; font-weight:bold; }
